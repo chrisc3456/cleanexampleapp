@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Clean Example App</string>
+
+    <string name="errorNoData">Unable to retrieve data</string>
+</resources>

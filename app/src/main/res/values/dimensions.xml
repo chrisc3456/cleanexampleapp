@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="dimenCardPadding">8dp</dimen>
+    <dimen name="dimenCardCornerRadius">4dp</dimen>
+    <dimen name="dimenCardElevation">4dp</dimen>
+    <dimen name="dimenCardVerticalDividerWidth">4dp</dimen>
+    <dimen name="dimenCardListSeparator">8dp</dimen>
+    <dimen name="textSizeTitle">12sp</dimen>
+    <dimen name="textSizeExcerpt">12sp</dimen>
+    <dimen name="textSizeFootnote">12sp</dimen>
+</resources>
