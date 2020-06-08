@@ -28,13 +28,13 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField "String", "CleanAppBaseUrl", CleanApp_BaseUrl
+            buildConfigField "String", "CleanAppBaseUrl", CleanApp_BaseUrl_Debug
         }
 
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "CleanAppBaseUrl", CleanApp_BaseUrl
+            buildConfigField "String", "CleanAppBaseUrl", CleanApp_BaseUrl_Release
         }
     }
 
