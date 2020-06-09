@@ -1,7 +1,7 @@
 package com.example.clean.di.module
 
 import com.example.clean.BuildConfig
-import com.example.clean.api.ApiService
+import com.example.clean.api.AzureFunctionService
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -15,7 +15,7 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun provideItemService(): ApiService {
+    fun provideItemService(): AzureFunctionService {
 
         val logger = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
         val client = OkHttpClient.Builder()
@@ -27,7 +27,7 @@ class NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BuildConfig.CleanAppBaseUrl)
             .build()
-            .create(ApiService::class.java)
+            .create(AzureFunctionService::class.java)
     }
 
 }

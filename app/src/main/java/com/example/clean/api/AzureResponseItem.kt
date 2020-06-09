@@ -1,6 +1,6 @@
 package com.example.clean.api
 
-data class ApiResponseItem(
+data class AzureResponseItem(
     val id: String,
     val date: String,
     val title: String,

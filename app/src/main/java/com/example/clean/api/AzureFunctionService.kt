@@ -4,13 +4,13 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface ApiService {
+interface AzureFunctionService {
 
     @GET("item")
-    fun getItems(): Call<List<ApiResponseItem>>
+    fun getItems(): Call<List<AzureResponseItem>>
 
     @GET("item/{id}")
     fun getItem(
         @Path("id") id: Int
-    ): Call<ApiResponseItem>
+    ): Call<AzureResponseItem>
 }
