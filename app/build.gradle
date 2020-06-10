@@ -51,8 +51,13 @@ dependencies {
 
     // Testing
     testImplementation "junit:junit:$junit_version"
+    testImplementation 'android.arch.core:core-testing:1.1.1'
     androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    androidTestImplementation "androidx.test:rules:$test_rules_version"
+    testImplementation "com.squareup.okhttp:mockwebserver:$mock_web_server_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_test_version"
 
     // Navigation components
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
