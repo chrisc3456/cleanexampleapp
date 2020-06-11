@@ -7,7 +7,7 @@
     <data>
         <variable
             name="summary"
-            type="com.example.clean.data.model.Summary" />
+            type="com.example.clean.viewobjects.Summary" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="start"
                 android:text="@{summary.title}"
-                android:textSize="@dimen/textSizeTitle"
+                android:textSize="@dimen/dimenCardTextSizeTitle"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="start"
                 android:text="@{summary.excerpt}"
-                android:textSize="@dimen/textSizeExcerpt"
+                android:textSize="@dimen/dimenCardTextSizeExcerpt"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewSummaryTitle"
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:textAllCaps="true"
-                android:textSize="@dimen/textSizeFootnote"
+                android:textSize="@dimen/dimenCardTextSizeFootnote"
                 app:bindTextDate="@{summary.date}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

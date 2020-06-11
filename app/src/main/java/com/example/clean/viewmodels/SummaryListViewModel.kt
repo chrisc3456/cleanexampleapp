@@ -1,11 +1,11 @@
-package com.example.clean.ui.summarylist
+package com.example.clean.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.clean.data.Result
-import com.example.clean.data.model.Summary
 import com.example.clean.data.repository.SummaryRepository
+import com.example.clean.viewobjects.Summary
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
