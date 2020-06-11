@@ -2,7 +2,10 @@ package com.example.clean.di.module
 
 import com.example.clean.api.AzureFunctionService
 import com.example.clean.data.localdb.ItemDatabase
-import com.example.clean.data.repository.*
+import com.example.clean.data.repository.ContentRepository
+import com.example.clean.data.repository.ContentRepositoryCached
+import com.example.clean.data.repository.SummaryRepository
+import com.example.clean.data.repository.SummaryRepositoryRemoteCached
 import com.example.clean.data.sources.AzureItemDataSource
 import com.example.clean.data.sources.ItemLocalDataSource
 import com.example.clean.data.sources.ItemRemoteDataSource
@@ -18,6 +21,11 @@ class RepositoryModule {
     @Provides
     fun provideSummaryRepository(remoteDataSource: ItemRemoteDataSource, localDataSource: ItemLocalDataSource): SummaryRepository =
         SummaryRepositoryRemoteCached(remoteDataSource, localDataSource)
+
+    @Singleton
+    @Provides
+    fun provideContentRepository(localDataSource: ItemLocalDataSource): ContentRepository =
+        ContentRepositoryCached(localDataSource)
 
     @Singleton
     @Provides

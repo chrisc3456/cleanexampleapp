@@ -1,4 +1,4 @@
-package com.example.clean.ui
+package com.example.clean.ui.fragments
 
 import android.content.Context
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package com.example.clean.ui.summarylist
+package com.example.clean.ui.fragments.summarylist
 
 import android.content.Context
 import android.os.Bundle
@@ -8,12 +8,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.clean.R
 import com.example.clean.ViewModelFactory
-import com.example.clean.data.model.Summary
-import com.example.clean.ui.BaseFragment
 import com.example.clean.ui.VerticalListSpacer
+import com.example.clean.ui.fragments.BaseFragment
+import com.example.clean.viewmodels.SummaryListViewModel
+import com.example.clean.viewobjects.Summary
 import kotlinx.android.synthetic.main.fragment_summary_list.*
 import javax.inject.Inject
 
@@ -21,7 +23,7 @@ class SummaryListFragment : BaseFragment() {
 
     @Inject lateinit var viewModelFactory: ViewModelFactory
     private lateinit var summaryViewModel: SummaryListViewModel
-    private val summaryAdapter = SummaryListAdapter()
+    private val summaryAdapter = SummaryListAdapter { id -> onSummaryClick(id) }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -78,5 +80,10 @@ class SummaryListFragment : BaseFragment() {
             val toast = Toast.makeText(requireContext(), resources.getString(R.string.errorNoData), Toast.LENGTH_LONG)
             toast.show()
         }
+    }
+
+    private fun onSummaryClick(id: String) {
+        val action = SummaryListFragmentDirections.actionSummaryListFragmentToFullContentFragment(id)
+        findNavController().navigate(action)
     }
 }

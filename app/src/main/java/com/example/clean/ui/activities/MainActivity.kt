@@ -1,7 +1,7 @@
-package com.example.clean.ui.main
+package com.example.clean.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.clean.R
 
 class MainActivity : AppCompatActivity() {

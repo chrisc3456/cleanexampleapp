@@ -5,9 +5,9 @@ import com.example.clean.R
 import com.example.clean.api.AzureResponseItem
 import com.example.clean.data.Result
 import com.example.clean.data.localdb.ItemEntity
-import com.example.clean.data.model.Summary
 import com.example.clean.data.sources.ItemLocalDataSource
 import com.example.clean.data.sources.ItemRemoteDataSource
+import com.example.clean.viewobjects.Summary
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -44,7 +44,7 @@ class SummaryRepositoryRemoteCached @Inject constructor(
             // If we have items cached then we can return results successfully
             cachedItems?.let {
                 return@withContext Result.Success(
-                    cachedItems!!.map { Summary(id = it.id, date = it.date, title = it.title, excerpt = it.excerpt) }.sortedBy { it.date }
+                    cachedItems!!.map { Summary(id = it.id, date = it.date, title = it.title, excerpt = it.excerpt) }.sortedByDescending { it.date }
                 )
             }
 

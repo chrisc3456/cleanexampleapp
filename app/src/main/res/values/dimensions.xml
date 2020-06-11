@@ -4,7 +4,13 @@
     <dimen name="dimenCardElevation">4dp</dimen>
     <dimen name="dimenCardVerticalDividerWidth">4dp</dimen>
     <dimen name="dimenCardListSeparator">8dp</dimen>
-    <dimen name="textSizeTitle">12sp</dimen>
-    <dimen name="textSizeExcerpt">12sp</dimen>
-    <dimen name="textSizeFootnote">12sp</dimen>
+    <dimen name="dimenDefaultMargin">16dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="dimenCardTextSizeTitle">12sp</dimen>
+    <dimen name="dimenCardTextSizeExcerpt">12sp</dimen>
+    <dimen name="dimenCardTextSizeFootnote">12sp</dimen>
+    <dimen name="dimenTextSizeTitle">24sp</dimen>
+    <dimen name="dimenTextSizeDate">12sp</dimen>
+    <dimen name="dimenTextSizeContent">12sp</dimen>
 </resources>

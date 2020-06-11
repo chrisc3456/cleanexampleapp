@@ -1,13 +1,13 @@
-package com.example.clean.ui.summarylist
+package com.example.clean.ui.fragments.summarylist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.clean.R
-import com.example.clean.data.model.Summary
+import com.example.clean.viewobjects.Summary
 
-class SummaryListAdapter: RecyclerView.Adapter<SummaryViewHolder>() {
+class SummaryListAdapter(private val onClickSummaryListener: (String) -> Unit): RecyclerView.Adapter<SummaryViewHolder>() {
 
     private var summaries: List<Summary> = listOf()
 
@@ -19,6 +19,7 @@ class SummaryListAdapter: RecyclerView.Adapter<SummaryViewHolder>() {
                 parent,
                 false
             )
+        , onClickSummaryListener
         )
     }
 

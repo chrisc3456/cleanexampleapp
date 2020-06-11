@@ -15,6 +15,6 @@ interface ItemEntityDao {
     fun getItems(): List<ItemEntity>
 
     @Query("SELECT * FROM ItemEntity WHERE id = :id")
-    fun getItem(id: String): ItemEntity
+    fun getItem(id: String): ItemEntity?
 
 }

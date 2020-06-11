@@ -1,4 +1,4 @@
-package com.example.clean.data.model
+package com.example.clean.viewobjects
 
 data class Summary(
     val id: String,

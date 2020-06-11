@@ -7,7 +7,20 @@
 
     <fragment
         android:id="@+id/summaryListFragment"
-        android:name="com.example.clean.ui.summarylist.SummaryListFragment"
+        android:name="com.example.clean.ui.fragments.summarylist.SummaryListFragment"
         android:label="fragment_summary_list"
-        tools:layout="@layout/fragment_summary_list" />
+        tools:layout="@layout/fragment_summary_list" >
+        <action
+            android:id="@+id/action_summaryListFragment_to_fullContentFragment"
+            app:destination="@id/fullContentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullContentFragment"
+        android:name="com.example.clean.ui.fragments.content.ContentFragment"
+        android:label="FullContentFragment"
+        tools:layout="@layout/fragment_content">
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
 </navigation>

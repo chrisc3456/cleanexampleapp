@@ -12,6 +12,10 @@ class RoomItemDataSource @Inject constructor(private val database: ItemDatabase)
         return database.itemDao().getItems()
     }
 
+    override fun getItem(id: String): ItemEntity? {
+        return database.itemDao().getItem(id)
+    }
+
     override fun updateWithRemoteItems(items: List<AzureResponseItem>) {
         database.itemDao().addItems(
             items.map { item -> ItemEntity(id = item.id, date = item.date, title = item.title, excerpt = item.excerpt, content = item.content) }
