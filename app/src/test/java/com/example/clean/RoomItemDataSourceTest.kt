@@ -1,5 +1,6 @@
 package com.example.clean
 
+import com.example.clean.api.AzureResponseItem
 import com.example.clean.data.localdb.ItemDatabase
 import com.example.clean.data.localdb.ItemEntity
 import com.example.clean.data.localdb.ItemEntityDao
@@ -41,8 +42,29 @@ class RoomItemDataSourceTest {
     }
 
     @Test
+    fun getItem_databaseAndIdProvided_daoCalled() {
+        dataSource.getItem("test")
+        verify(database.itemDao()).getItem("test")
+    }
+
+    @Test
+    fun getItem_daoHasItem_itemReturned() {
+        val item = ItemEntity("", "", "", "", "")
+        `when`(dao.getItem("")).thenReturn(item)
+
+        assertEquals(item, dataSource.getItem(""))
+    }
+
+    @Test
     fun updateWithRemoteItems_itemsProvided_addItemsCalled() {
         dataSource.updateWithRemoteItems(listOf())
         verify(database.itemDao()).addItems(listOf())
+    }
+
+    @Test
+    fun updateWithRemoteItems_itemsProvidedWithValue_itemsAddedWithMatchingValue() {
+        val item = AzureResponseItem("A", "B", "C", "D", "E")
+        dataSource.updateWithRemoteItems(listOf(item))
+        verify(database.itemDao()).addItems(listOf(ItemEntity("A", "B", "C", "D", "E")))
     }
 }
