@@ -2,9 +2,9 @@ package com.example.clean
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.clean.data.Result
-import com.example.clean.data.model.Summary
+import com.example.clean.viewobjects.Summary
 import com.example.clean.data.repository.SummaryRepository
-import com.example.clean.ui.summarylist.SummaryListViewModel
+import com.example.clean.viewmodels.SummaryListViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before

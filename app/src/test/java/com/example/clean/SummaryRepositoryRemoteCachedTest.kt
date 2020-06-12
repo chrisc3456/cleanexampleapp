@@ -3,7 +3,7 @@ package com.example.clean
 import com.example.clean.api.AzureResponseItem
 import com.example.clean.data.Result
 import com.example.clean.data.localdb.ItemEntity
-import com.example.clean.data.model.Summary
+import com.example.clean.viewobjects.Summary
 import com.example.clean.data.repository.SummaryRepositoryRemoteCached
 import com.example.clean.data.sources.ItemLocalDataSource
 import com.example.clean.data.sources.ItemRemoteDataSource
@@ -79,7 +79,7 @@ class SummaryRepositoryRemoteCachedTest {
 
     @ExperimentalCoroutinesApi
     @Test
-    fun getSummaries_forceRefreshFalse_resultsSortedByDate() = mainCoroutineRule.runBlockingTest {
+    fun getSummaries_forceRefreshFalse_resultsSortedByDateDescending() = mainCoroutineRule.runBlockingTest {
         `when`(localSource.getItems())
             .thenReturn(listOf(
                 ItemEntity("", "B", "", "", ""),
@@ -90,10 +90,10 @@ class SummaryRepositoryRemoteCachedTest {
 
         val summaries = (repository.getSummaries(false) as Result.Success<List<Summary>>).data
 
-        assertTrue(summaries[0].date == "A")
-        assertTrue(summaries[1].date == "B")
-        assertTrue(summaries[2].date == "C")
-        assertTrue(summaries[3].date == "D")
+        assertTrue(summaries[0].date == "D")
+        assertTrue(summaries[1].date == "C")
+        assertTrue(summaries[2].date == "B")
+        assertTrue(summaries[3].date == "A")
     }
 
     @ExperimentalCoroutinesApi
